@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hiro Digital · Webs y sistemas a medida en Posadas</title>
 <meta name="description" content="Webs, turnos online y sistemas de caja y stock a medida para negocios y consultorios de Posadas, Misiones. Probá una venta en la demo y escribinos.">
-<meta name="theme-color" content="#1035c1">
+<meta name="theme-color" content="#2c18a8">
 <meta property="og:title" content="Hiro Digital · Webs y sistemas a medida">
 <meta property="og:description" content="Webs, turnos online y sistemas de caja y stock para negocios de Posadas.">
 <meta property="og:type" content="website">
@@ -23,7 +23,7 @@
 
 :root{
   --gris:#f7f7f7; --suave:rgba(0,0,0,.6); --linea:#ececec;
-  --azul:#138cff; --marca:#3b6cff; --indigo:#1035c1; --cielo:#9eddfc;
+  --acento:#6d3df0; --marca:#3b6cff;
   --ambar:#f5b800; --verde:#1c8a4c;
   --sans:"Inter","Inter Display",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --serif:"Instrument Serif","Times New Roman",serif;
@@ -36,7 +36,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 a{color:inherit}
 h1,h2,h3,h4{font-weight:700;letter-spacing:-.05em;line-height:1}
 .it{font-family:var(--serif);font-style:italic;font-weight:400}
-:focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:8px}
+:focus-visible{outline:3px solid var(--acento);outline-offset:3px;border-radius:8px}
 .skip{position:absolute;left:-999px;top:8px;background:#fff;color:#000;padding:10px 16px;border-radius:10px;z-index:200}
 .skip:focus{left:8px}
 
@@ -73,15 +73,23 @@ h1,h2,h3,h4{font-weight:700;letter-spacing:-.05em;line-height:1}
 .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* inicio: cielo */
-.hero{position:relative;min-height:max(100svh,780px);background:linear-gradient(180deg,#2a34b7 0,#1035c1 7%,#095be2 17%,#138cff 34%,#3ca9fe 51%,#65c3ff 67%,#87d9ff 84%,#9eddfc 100%);color:#fff;text-align:center;padding:clamp(120px,17vh,160px) 20px 80px;display:flex;flex-direction:column;align-items:center}
+.hero{position:relative;background:linear-gradient(180deg,#1b1070 0,#2c18a8 8%,#4a22c9 22%,#5a2fe0 42%,#7342f2 62%,#946ff9 80%,#c0a8ff 94%,#d9c9ff 100%);color:#fff;text-align:center;padding:clamp(120px,17vh,160px) 20px 0;display:flex;flex-direction:column;align-items:center}
 .etq{display:flex;align-items:center;gap:10px;font:600 20px/1 var(--sans);letter-spacing:-.02em}
 .etq svg{width:22px;height:22px;fill:#fff}
 .hero h1{font-size:clamp(42px,12.2vw,80px);margin-top:26px}
 .hero h1 span{display:block}
 .hero .sub{font-size:clamp(17px,2.2vw,20px);line-height:1.4;letter-spacing:-.01em;max-width:600px;margin-top:26px;opacity:.92}
-.hero .btn{margin-top:30px}
-.notas{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 22px;margin-top:22px;font-size:12px;opacity:.62}
-.colinas{position:relative;height:clamp(240px,34vw,470px);background:linear-gradient(180deg,#9eddfc 0%,#a9e0f8 30%,#cfeaf2 100%);overflow:hidden}
+.acciones{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:30px}
+.btn.vidrio{background:rgba(255,255,255,.16);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
+.btn.vidrio:hover{background:rgba(255,255,255,.26)}
+.notas{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 22px;margin-top:22px;font-size:12.5px;opacity:.85}
+/* la pieza de vidrio que llena el cielo */
+.cristal{position:relative;z-index:2;width:clamp(190px,25vw,330px);margin:clamp(30px,5vh,54px) auto clamp(-70px,-5vw,-36px)}
+.cristal svg{display:block;width:100%;height:auto;overflow:visible}
+.cristal .gema{animation:flota 7s ease-in-out infinite}
+@keyframes flota{50%{transform:translateY(-14px)}}
+.estatico .cristal .gema{animation:none}
+.colinas{position:relative;height:clamp(240px,34vw,470px);background:linear-gradient(180deg,#d9c9ff 0%,#e3d6ff 30%,#efe6ff 100%);overflow:hidden}
 .colinas svg{position:absolute;inset:0;width:100%;height:100%;display:block}
 .colinas::after{content:"";position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(180deg,rgba(255,255,255,0),#fff);pointer-events:none}
 
@@ -102,13 +110,13 @@ h1,h2,h3,h4{font-weight:700;letter-spacing:-.05em;line-height:1}
 .panel{background:var(--gris);border-radius:40px;padding:clamp(28px,4.6vw,52px) clamp(14px,3.6vw,40px) clamp(14px,3.6vw,40px);margin-top:20px}
 .panel>h3{font-size:clamp(30px,6.8vw,50px);text-align:center}
 .panel>p{max-width:740px;margin:18px auto 0;text-align:center;color:var(--suave);font-size:16px;line-height:1.45;letter-spacing:-.01em;padding:0 8px}
-.media{position:relative;margin-top:clamp(24px,3.4vw,40px);border-radius:20px;overflow:hidden;background:linear-gradient(180deg,#138cff 0%,#65c3ff 55%,#9eddfc 100%);min-height:clamp(440px,54vw,640px);display:grid;place-items:center;padding:clamp(22px,4vw,52px) clamp(10px,3vw,40px) clamp(48px,6vw,80px)}
-.media.tarde{background:linear-gradient(180deg,#4f9cff 0%,#9fc6f2 45%,#f4d9a4 100%)}
+.media{position:relative;margin-top:clamp(24px,3.4vw,40px);border-radius:20px;overflow:hidden;background:linear-gradient(180deg,#5a2fe0 0%,#946ff9 55%,#d9c9ff 100%);min-height:clamp(440px,54vw,640px);display:grid;place-items:center;padding:clamp(22px,4vw,52px) clamp(10px,3vw,40px) clamp(48px,6vw,80px)}
+.media.tarde{background:linear-gradient(180deg,#6d3df0 0%,#c2a1ff 45%,#ffd3b8 100%)}
 .media>svg.col{position:absolute;left:0;bottom:0;width:100%;height:62%;display:block}
 .media>*:not(.col){position:relative;z-index:1}
 
 /* ventana de ejemplo */
-.win{width:min(780px,100%);background:#fff;border-radius:18px;box-shadow:0 30px 80px rgba(8,30,100,.38),0 0 0 1px rgba(0,0,0,.04);padding:20px}
+.win{width:min(780px,100%);background:#fff;border-radius:18px;box-shadow:0 30px 80px rgba(30,10,110,.4),0 0 0 1px rgba(0,0,0,.04);padding:20px}
 .win-h{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
 .win-h strong{font:700 24px/1 var(--sans);letter-spacing:-.05em}
 .chip{display:inline-block;background:var(--gris);color:var(--suave);font:500 12px/1.2 var(--sans);padding:7px 12px;border-radius:30px}
@@ -117,7 +125,7 @@ h1,h2,h3,h4{font-weight:700;letter-spacing:-.05em;line-height:1}
 .pos-body{display:grid;grid-template-columns:1fr 1.1fr;gap:14px}
 .items{display:grid;gap:8px;align-content:start}
 .item{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;background:var(--gris);border:2px solid transparent;border-radius:14px;padding:11px 14px;transition:border-color .2s,background .2s,transform .15s}
-.item:hover{border-color:var(--azul);background:#eef6ff}
+.item:hover{border-color:var(--acento);background:#f3eeff}
 .item:active{transform:scale(.98)}
 .item b{font:600 15px/1.2 var(--sans);letter-spacing:-.02em}
 .item span{font:400 13px/1.3 var(--sans);color:var(--suave)}
@@ -133,7 +141,7 @@ h1,h2,h3,h4{font-weight:700;letter-spacing:-.05em;line-height:1}
 @keyframes entra{from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:none}}
 .tot{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#000;color:#fff;border-radius:12px;padding:10px 14px;margin-top:10px;font:500 14px var(--sans)}
 .tot b{font:700 28px/1 var(--sans);letter-spacing:-.05em;white-space:nowrap}
-.cobrar{margin-top:10px;background:var(--azul);color:#fff;border:0;border-radius:30px;padding:12px;font:600 15px var(--sans);transition:background .2s,opacity .2s}
+.cobrar{margin-top:10px;background:var(--acento);color:#fff;border:0;border-radius:30px;padding:12px;font:600 15px var(--sans);transition:background .2s,opacity .2s}
 .cobrar:hover:not(:disabled){background:#0a78e6}
 .cobrar:disabled{opacity:.35;cursor:not-allowed}
 .etiqueta{position:absolute;left:10px;right:10px;top:10px;z-index:2;background:#fff;border:2px solid #000;border-radius:12px;padding:8px 10px 6px;box-shadow:0 14px 30px rgba(0,0,0,.25);overflow:hidden}
@@ -145,7 +153,7 @@ h1,h2,h3,h4{font-weight:700;letter-spacing:-.05em;line-height:1}
 @keyframes barrido{from{left:0}to{left:calc(100% - 3px)}}
 .status{min-height:2.7em;margin:12px 2px 0;font:400 13.5px/1.35 var(--sans);color:var(--suave)}
 .status.ok{color:var(--verde);font-weight:600}
-.reset{background:none;border:0;color:var(--azul);font:600 13.5px var(--sans);padding:4px;margin:0 0 0 -2px;text-decoration:underline;text-underline-offset:3px}
+.reset{background:none;border:0;color:var(--acento);font:600 13.5px var(--sans);padding:4px;margin:0 0 0 -2px;text-decoration:underline;text-underline-offset:3px}
 
 /* pestañas (como "categorías") */
 .cats{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
@@ -206,9 +214,21 @@ h1,h2,h3,h4{font-weight:700;letter-spacing:-.05em;line-height:1}
 .card3 h4{font-size:30px;letter-spacing:-.05em;line-height:1}
 .card3 p{margin-top:16px;font-size:16px;line-height:1.4;letter-spacing:-.01em;color:var(--suave)}
 
+/* antes y ahora */
+.cambios{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:clamp(32px,4vw,52px)}
+.cambio{background:var(--gris);border-radius:30px;padding:clamp(24px,3.4vw,36px)}
+.cambio .rub{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:30px;padding:5px 14px 5px 5px;font:600 13px/1 var(--sans);letter-spacing:-.01em}
+.cambio .rub i{width:26px;height:26px;border-radius:50%;display:grid;place-items:center}
+.cambio .rub i svg{width:13px;height:13px;fill:none;stroke:#fff;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.cambio dl{margin-top:26px}
+.cambio dt{font-size:24px;line-height:1;color:rgba(0,0,0,.4)}
+.cambio dd{margin:8px 0 0;font:500 17px/1.35 var(--sans);letter-spacing:-.02em;color:var(--suave)}
+.cambio dt.ya{margin-top:20px;padding-top:20px;border-top:1px solid #e2e2e2;color:var(--acento)}
+.cambio dd.ya{color:#000;font-weight:600}
+
 /* cómo trabajamos (la tarjeta con pestaña negra) */
-.plan{background:linear-gradient(180deg,#fff 0%,#aee3ff 10%,#3ca9fe 26%,#138cff 44%,#1035c1 74%,#2a34b7 84%,#fff 100%);padding:clamp(64px,8vw,110px) 20px clamp(100px,12vw,150px)}
-.card{position:relative;width:min(400px,100%);margin:48px auto 0;background:var(--gris);border-radius:40px;padding:62px 26px 26px;box-shadow:0 30px 80px rgba(16,53,193,.3)}
+.plan{background:linear-gradient(180deg,#fff 0%,#e7dcff 10%,#a98bff 26%,#7a4cf0 44%,#4a22c9 74%,#2c18a8 84%,#fff 100%);padding:clamp(64px,8vw,110px) 20px clamp(100px,12vw,150px)}
+.card{position:relative;width:min(400px,100%);margin:48px auto 0;background:var(--gris);border-radius:40px;padding:62px 26px 26px;box-shadow:0 30px 80px rgba(60,20,180,.32)}
 .card .tabn{position:absolute;top:0;left:50%;transform:translateX(-50%);border-radius:0 0 18px 18px;padding:12px 20px;display:flex;align-items:center;gap:10px;color:#fff;font:600 14px/1 var(--sans);letter-spacing:-.02em;white-space:nowrap}
 .seg{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#fff;border-radius:30px;padding:4px}
 .seg button{border:0;background:transparent;border-radius:26px;padding:11px 2px;font:600 12.5px/1 var(--sans);letter-spacing:-.01em;color:rgba(0,0,0,.55);transition:background .2s,color .2s}
@@ -220,7 +240,7 @@ h1,h2,h3,h4{font-weight:700;letter-spacing:-.05em;line-height:1}
 .pasos h6{font:500 14px/1.2 var(--sans)}
 .barra{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:12px}
 .barra i{height:6px;border-radius:6px;background:#e8e8e8}
-.barra i:first-child{background:var(--azul)}
+.barra i:first-child{background:var(--acento)}
 .etqs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:8px;font:400 11.5px/1.2 var(--sans);color:var(--suave)}
 .ck{list-style:none;margin:20px 4px 22px;display:grid;gap:12px}
 .ck li{display:flex;gap:10px;align-items:flex-start;font:400 14px/1.35 var(--sans);letter-spacing:-.01em}
@@ -234,8 +254,11 @@ h1,h2,h3,h4{font-weight:700;letter-spacing:-.05em;line-height:1}
 .quien h2{font-size:clamp(34px,5.4vw,50px);margin-top:18px}
 .quien p{color:var(--suave);font-size:17px;line-height:1.45;letter-spacing:-.01em;margin-top:16px;max-width:46ch}
 .quien .btn{margin-top:26px}
+.como{list-style:none;margin-top:22px;display:grid;gap:12px;max-width:46ch}
+.como li{font:400 15px/1.4 var(--sans);letter-spacing:-.01em;color:var(--suave)}
+.como li b{color:#000;font-weight:600}
 .quien .media{margin:0;min-height:380px;padding:30px 16px 40px;border-radius:24px}
-.tarjeta{width:min(320px,100%);background:#fff;border-radius:20px;padding:24px;box-shadow:0 24px 60px rgba(8,30,100,.35);transform:rotate(-2.5deg)}
+.tarjeta{width:min(320px,100%);background:#fff;border-radius:20px;padding:24px;box-shadow:0 24px 60px rgba(30,10,110,.36);transform:rotate(-2.5deg)}
 .tarjeta .mark{width:44px;height:44px;border-radius:12px;font-size:26px}
 .tarjeta b{display:block;margin-top:20px;font:700 24px/1 var(--sans);letter-spacing:-.05em}
 .tarjeta .rol{display:block;margin-top:8px;font:400 13.5px/1.4 var(--sans);color:var(--suave)}
@@ -258,13 +281,13 @@ details p{padding:0 4px 24px;color:var(--suave);font-size:16px;line-height:1.5;l
 .f label{display:block;font:600 13px var(--sans);margin-bottom:7px;letter-spacing:-.01em}
 .f input,.f select,.f textarea{width:100%;background:#fff;border:1px solid #e6e6e6;border-radius:14px;padding:13px 15px;font:400 16px var(--sans);color:#000}
 .f textarea{min-height:110px;resize:vertical}
-.f input:focus,.f select:focus,.f textarea:focus{outline:2px solid var(--azul);outline-offset:1px;border-color:transparent}
+.f input:focus,.f select:focus,.f textarea:focus{outline:2px solid var(--acento);outline-offset:1px;border-color:transparent}
 .form .btn{width:100%}
 .form .mini{margin-top:14px;text-align:center;font-size:12.5px;line-height:1.5;color:rgba(0,0,0,.5)}
-.form .mini a{color:var(--azul);font-weight:600}
+.form .mini a{color:var(--acento);font-weight:600}
 .datos{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px}
 .datos a,.datos div{display:inline-flex;align-items:center;gap:9px;background:var(--gris);border-radius:30px;padding:10px 16px 10px 12px;font:500 14px var(--sans);text-decoration:none;letter-spacing:-.01em}
-.datos svg{width:16px;height:16px;fill:none;stroke:var(--azul);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.datos svg{width:16px;height:16px;fill:none;stroke:var(--acento);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 
 /* pie */
 footer{position:relative;background:#000;color:#fff;padding:90px 20px 0;overflow:hidden}
@@ -298,7 +321,7 @@ footer .copy{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:26px}
   .nav.open{display:flex}
   .nav a{padding:16px 0;font-size:17px;border-bottom:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.8)}
   .nav a.pill{margin-top:16px;border-bottom:0;text-align:center;padding:15px;font-size:15px;color:#000}
-  .pos-body,.page{grid-template-columns:1fr}
+  .pos-body,.page,.cambios{grid-template-columns:1fr}
   .panel{border-radius:30px}
   .media{min-height:0}
   .card3{padding:30px}
@@ -311,7 +334,6 @@ footer .copy{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:26px}
   .page{padding:20px}
   footer .c{grid-template-columns:1fr}
 }
-.estatico .hero{min-height:880px}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *{animation:none!important;transition:none!important}
@@ -324,12 +346,12 @@ footer .copy{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:26px}
 <!-- dibujos reutilizables: íconos y colinas -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
-    <linearGradient id="gFar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cbe7e6" stop-opacity=".85"/><stop offset="1" stop-color="#8fbba2"/></linearGradient>
-    <linearGradient id="gMid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#98bd82"/><stop offset="1" stop-color="#4c7a44"/></linearGradient>
-    <linearGradient id="gBig" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3f5a2b"/><stop offset=".45" stop-color="#86a23a"/><stop offset=".8" stop-color="#c9bf55"/><stop offset="1" stop-color="#e2cf6a"/></linearGradient>
-    <linearGradient id="gSombra" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c3a1e" stop-opacity="0"/><stop offset="1" stop-color="#1c3a1e" stop-opacity=".6"/></linearGradient>
-    <linearGradient id="gFrente" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34502f"/><stop offset="1" stop-color="#1b2f20"/></linearGradient>
-    <radialGradient id="gLuz" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff2a0" stop-opacity=".7"/><stop offset="1" stop-color="#fff2a0" stop-opacity="0"/></radialGradient>
+    <linearGradient id="gFar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eadfff" stop-opacity=".85"/><stop offset="1" stop-color="#b79de8"/></linearGradient>
+    <linearGradient id="gMid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a98be8"/><stop offset="1" stop-color="#6a46c4"/></linearGradient>
+    <linearGradient id="gBig" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3b2a8f"/><stop offset=".45" stop-color="#6a4fd8"/><stop offset=".8" stop-color="#a98af5"/><stop offset="1" stop-color="#d9c2ff"/></linearGradient>
+    <linearGradient id="gSombra" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a1052" stop-opacity="0"/><stop offset="1" stop-color="#1a1052" stop-opacity=".6"/></linearGradient>
+    <linearGradient id="gFrente" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2e2070"/><stop offset="1" stop-color="#170f45"/></linearGradient>
+    <radialGradient id="gLuz" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffe9ff" stop-opacity=".7"/><stop offset="1" stop-color="#ffe9ff" stop-opacity="0"/></radialGradient>
     <g id="colinas-g">
       <path d="M0 190C140 150 260 140 400 165C540 190 620 130 780 120C940 110 1080 160 1220 150C1320 143 1390 160 1440 170L1440 460L0 460Z" fill="url(#gFar)"/>
       <path d="M0 250C100 205 240 190 380 215C520 240 600 205 720 185C860 162 1010 190 1130 215C1250 240 1350 225 1440 205L1440 460L0 460Z" fill="url(#gMid)"/>
@@ -374,8 +396,34 @@ footer .copy{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:26px}
   <p class="etq rv" style="--d:0s"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.2 6.8L21 11l-6.8 2.2L12 20l-2.2-6.8L3 11l6.8-2.2z"/></svg>Webs y sistemas a medida</p>
   <h1 class="rv" style="--d:.1s"><span>Sistemas y webs</span><span class="it">a tu medida.</span></h1>
   <p class="sub rv" style="--d:.2s">Ordenamos lo que hoy llevás en un cuaderno o en Excel, o armamos la web para que tus clientes te encuentren y te consulten. Más abajo podés probar cómo funciona.</p>
-  <a class="btn rv" style="--d:.3s" href="https://wa.me/5493764151908" data-msg="Hola, quiero pedir un presupuesto sin cargo."><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.4 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2zm5.6 14c-.2.7-1.3 1.3-1.8 1.3-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.6.8 2 .8 2.1.1.1.1.3 0 .4-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.8 1.2 2.1 1.3.3.1.4.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.3.1 1.6.8 1.9.9.3.2.5.2.6.3.1.1.1.7-.1 1.4z"/></svg>Pedir presupuesto</a>
+  <div class="acciones rv" style="--d:.3s">
+    <a class="btn" href="https://wa.me/5493764151908" data-msg="Hola, quiero pedir un presupuesto sin cargo."><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.4 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2zm5.6 14c-.2.7-1.3 1.3-1.8 1.3-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.6.8 2 .8 2.1.1.1.1.3 0 .4-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.8 1.2 2.1 1.3.3.1.4.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.3.1 1.6.8 1.9.9.3.2.5.2.6.3.1.1.1.7-.1 1.4z"/></svg>Pedir presupuesto</a>
+    <a class="btn vidrio" href="#trabajos">Ver los trabajos<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+  </div>
   <p class="notas rv" style="--d:.4s"><span>Posadas, Misiones</span><span>Respondemos por WhatsApp</span><span>Pantallas con datos de ejemplo</span></p>
+  <div class="cristal rv" style="--d:.5s" aria-hidden="true">
+    <svg viewBox="0 0 300 390" focusable="false">
+      <defs>
+        <linearGradient id="cTL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4edff"/><stop offset="1" stop-color="#b79cff"/></linearGradient>
+        <linearGradient id="cBL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8c5cf5"/><stop offset="1" stop-color="#4a22c9"/></linearGradient>
+        <linearGradient id="cBR" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a22c9"/><stop offset="1" stop-color="#1b0f6a"/></linearGradient>
+        <radialGradient id="cSom" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#1a0f6e" stop-opacity=".45"/><stop offset="1" stop-color="#1a0f6e" stop-opacity="0"/></radialGradient>
+      </defs>
+      <ellipse cx="150" cy="354" rx="112" ry="12" fill="url(#cSom)"/>
+      <g class="gema">
+        <path d="M150 34L272 104L150 174L28 104Z" fill="url(#cTL)"/>
+        <path d="M28 104L150 174L150 316L28 246Z" fill="url(#cBL)"/>
+        <path d="M150 174L272 104L272 246L150 316Z" fill="url(#cBR)"/>
+        <text transform="matrix(1 .574 0 1 28 104)" x="61" y="102" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="86" letter-spacing="-2" fill="#fff" fill-opacity=".92">HD</text>
+        <path d="M150 34L28 104L40 111L150 48Z" fill="#fff" opacity=".5"/>
+        <path d="M272 104L272 160L262 166L262 110Z" fill="#fff" opacity=".12"/>
+        <g fill="none" stroke="#fff" stroke-linejoin="round">
+          <path d="M150 34L272 104L272 246L150 316L28 246L28 104Z" stroke-opacity=".6" stroke-width="1.5"/>
+          <path d="M28 104L150 174L272 104M150 174L150 316" stroke-opacity=".5" stroke-width="1.5"/>
+        </g>
+      </g>
+    </svg>
+  </div>
 </section>
 
 <div class="colinas" aria-hidden="true">
@@ -460,7 +508,7 @@ footer .copy{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:26px}
               <div class="tr"><span>Crédito</span><span>$6.000,00</span></div>
               <div class="tr"><span>Transferencia</span><span>$26.350,00</span></div>
               <div class="tr"><span>Cuenta corriente</span><span>$16.000,00</span></div>
-              <div class="tr" style="color:#0a6fd1;font-weight:700;font-size:20px"><span>Total</span><span>$134.550,00</span></div>
+              <div class="tr" style="color:#5a2fe0;font-weight:700;font-size:20px"><span>Total</span><span>$134.550,00</span></div>
               <div class="tr fin" style="color:var(--verde);font-weight:700"><span>Ganancia bruta</span><span>$37.650,00</span></div>
             </div>
           </div>
@@ -498,6 +546,46 @@ footer .copy{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:26px}
       </article>
 
     </div>
+  </div>
+</section>
+
+<section class="sec" id="antes-ahora" style="padding-top:0">
+  <div class="c">
+    <div class="tit">
+      <h2 class="rv">Antes y ahora</h2>
+      <p class="rv">Los problemas de todos los días y cómo quedan con un sistema o una web a medida.</p>
+    </div>
+    <div class="cambios">
+      <article class="cambio rv">
+        <span class="rub"><i class="c1"><svg><use href="#i-caja"/></svg></i>Caja y stock</span>
+        <dl>
+          <dt class="it">Antes</dt><dd>Las ventas anotadas en un cuaderno y el stock contado a ojo.</dd>
+          <dt class="it ya">Ahora</dt><dd class="ya">Cada venta descuenta del stock, avisa cuando algo se termina y el cierre del día sale solo.</dd>
+        </dl>
+      </article>
+      <article class="cambio rv" style="--d:.08s">
+        <span class="rub"><i class="c3"><svg><use href="#i-fiado"/></svg></i>Fiado</span>
+        <dl>
+          <dt class="it">Antes</dt><dd>Las deudas de los clientes en una libreta que se llena, se mancha o se pierde.</dd>
+          <dt class="it ya">Ahora</dt><dd class="ya">Cada cliente con su cuenta corriente: lo que compró, lo que pagó y lo que debe.</dd>
+        </dl>
+      </article>
+      <article class="cambio rv">
+        <span class="rub"><i class="c5"><svg><use href="#i-turnos"/></svg></i>Turnos</span>
+        <dl>
+          <dt class="it">Antes</dt><dd>Turnos pedidos por mensaje a cualquier hora, y a veces dos para el mismo horario.</dd>
+          <dt class="it ya">Ahora</dt><dd class="ya">Una web donde el cliente elige un horario libre y vos ves la agenda del día.</dd>
+        </dl>
+      </article>
+      <article class="cambio rv" style="--d:.08s">
+        <span class="rub"><i class="c2"><svg><use href="#i-web"/></svg></i>Página web</span>
+        <dl>
+          <dt class="it">Antes</dt><dd>Clientes que no te encuentran, o que te preguntan lo mismo una y otra vez.</dd>
+          <dt class="it ya">Ahora</dt><dd class="ya">Una página con lo que hacés, dónde estás y un botón que abre tu WhatsApp con el mensaje armado.</dd>
+        </dl>
+      </article>
+    </div>
+    <p class="fine">Son ejemplos de cómo queda cada caso. Cada sistema se arma según cómo trabaja tu negocio.</p>
   </div>
 </section>
 
@@ -551,6 +639,11 @@ footer .copy{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:26px}
       <h2>Te atiende quien lo arma.</h2>
       <p>Soy Ángel Riquelme, técnico en informática y estudiante de Ingeniería en Informática, de Posadas. Antes de escribir una línea quiero entender cómo trabaja tu negocio.</p>
       <p>Armo sistemas y webs a medida y también hago soporte técnico: si algo se traba después de la entrega, sabés a quién escribirle.</p>
+      <ul class="como">
+        <li><b>Cómo trabajo.</b> Primero charlamos, después te paso una propuesta y vamos viendo juntos cada paso.</li>
+        <li><b>Plazos.</b> Te los digo en la propuesta, antes de arrancar.</li>
+        <li><b>Por WhatsApp.</b> Me escribís y te contesto; el mensaje sale armado.</li>
+      </ul>
       <a class="btn" href="https://wa.me/5493764151908" data-msg="Hola Ángel, quiero consultarte por un sistema o una web.">Escribime por WhatsApp</a>
     </div>
     <div class="media tarde">
@@ -576,6 +669,8 @@ footer .copy{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:26px}
     </div>
     <div class="faq rv">
       <details><summary>¿Cuánto sale?</summary><p>Depende de lo que necesites. Después de una charla corta te pasamos una propuesta con el precio, sin cargo y sin compromiso.</p></details>
+      <details><summary>¿Cuánto tarda?</summary><p>Depende de lo que se arme. Te damos el plazo en la propuesta, antes de empezar.</p></details>
+      <details><summary>¿Qué tengo que aportar para una página web?</summary><p>Lo que ya tengas: logo, textos y fotos de tu negocio. Si te falta algo, lo vemos juntos en la charla.</p></details>
       <details><summary>¿Necesito internet para usar la caja y stock?</summary><p>No. El sistema de caja y stock se abre con doble clic y funciona sin internet.</p></details>
       <details><summary>¿Las páginas web se ven bien en el celular?</summary><p>Sí. Se diseñan pensando primero en el celular y se adaptan a cualquier pantalla.</p></details>
       <details><summary>¿Y si necesito algo que no está en los ejemplos?</summary><p>Se desarrolla a medida. Contanos qué necesitás y te decimos si se puede, cómo y cuánto.</p></details>
