@@ -22,9 +22,10 @@
 @font-face{font-family:"Barlow Condensed";font-weight:700;font-display:swap;src:url(fonts/barlow-condensed-latin-700-normal.woff2) format("woff2")}
 
 :root{
-  --gris:#f7f7f7; --suave:rgba(0,0,0,.6); --linea:#ececec;
+  --gris:#f7f7f7; --suave:rgba(0,0,0,.6); --linea:#ececec; --borde:#919191;
+  --foco:#1b1070; --acento-osc:#5a2fe0;
   --acento:#6d3df0; --marca:#3b6cff;
-  --ambar:#f5b800; --verde:#1c8a4c;
+  --ambar:#f5b800; --verde:#177a42;
   --sans:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --serif:"Barlow Condensed","Arial Narrow",sans-serif;
   --w:1120px;
@@ -36,7 +37,9 @@ button{font:inherit;color:inherit;cursor:pointer}
 a{color:inherit}
 h1,h2,h3,h4{font-weight:700;letter-spacing:-.025em;line-height:1}
 .it{font-family:var(--serif);font-style:italic;font-weight:600;letter-spacing:0}
-:focus-visible{outline:3px solid var(--acento);outline-offset:3px;border-radius:8px}
+:focus-visible{outline:3px solid var(--foco);outline-offset:3px;border-radius:8px}
+.hero,.top,footer,.rub-f.idea{--foco:#fff}
+::selection{background:#e3d6ff;color:#000}
 .skip{position:absolute;left:-999px;top:8px;background:#fff;color:#000;padding:12px 16px;border-radius:10px;z-index:200}
 .skip:focus{left:8px}
 
@@ -62,11 +65,11 @@ h1,h2,h3,h4{font-weight:700;letter-spacing:-.025em;line-height:1}
 .logo{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font:600 16px/1 var(--sans);letter-spacing:-.03em}
 .mark{width:30px;height:30px;border-radius:9px;background:linear-gradient(180deg,#3b6cff,#2443d0);display:grid;place-items:center;font:700 18px/1 "Barlow Condensed",sans-serif;letter-spacing:-.02em;padding-bottom:1px;color:#fff;flex:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.45)}
 .nav{display:flex;align-items:center;gap:24px}
-.nav a{color:rgba(255,255,255,.62);font:500 14px/1 var(--sans);letter-spacing:-.02em;text-decoration:none;transition:color .2s}
+.nav a{color:rgba(255,255,255,.62);font:500 14px/1 var(--sans);letter-spacing:-.02em;text-decoration:none;padding:10px 2px;transition:color .2s}
 .nav a:hover{color:#fff}
 .nav a.pill{background:#fff;color:#000;border-radius:8px;padding:8px 16px;font:600 13px/1 var(--sans);letter-spacing:-.01em}
 .nav a.pill:hover{background:#e9e9e9}
-.burger{display:none;background:none;border:0;width:40px;height:40px;border-radius:12px}
+.burger{display:none;background:none;border:0;width:44px;height:44px;border-radius:12px;flex:none}
 .burger span{display:block;width:20px;height:2px;background:rgba(255,255,255,.7);margin:4px auto;border-radius:2px;transition:transform .2s,opacity .2s}
 .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
@@ -102,8 +105,8 @@ h1,h2,h3,h4{font-weight:700;letter-spacing:-.025em;line-height:1}
 /* ventana de ejemplo */
 .win{width:min(780px,100%);background:#fff;border-radius:18px;box-shadow:0 18px 40px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.05);padding:20px}
 .win-h{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
-.win-h strong{font:700 24px/1 var(--sans);letter-spacing:-.05em}
-.chip{display:inline-block;background:var(--gris);color:var(--suave);font:500 12.5px/1.3 var(--sans);padding:8px 12px;border-radius:30px}
+.win-h strong{font:700 24px/1 var(--sans);letter-spacing:-.04em}
+.chip{display:inline-block;background:var(--gris);color:var(--suave);font:500 13px/1.3 var(--sans);padding:8px 12px;border-radius:30px}
 
 /* caja de demostración */
 .pos-body{display:grid;grid-template-columns:1fr 1.1fr;gap:16px}
@@ -111,7 +114,7 @@ h1,h2,h3,h4{font-weight:700;letter-spacing:-.025em;line-height:1}
 .item{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;background:var(--gris);border:2px solid transparent;border-radius:14px;padding:12px 16px;transition:border-color .2s,background .2s,transform .2s}
 .item:hover{border-color:var(--acento);background:#f3eeff}
 .item:active{transform:scale(.98)}
-.item b{font:600 15px/1.2 var(--sans);letter-spacing:-.02em}
+.item b{font:600 15px/1.3 var(--sans);letter-spacing:-.02em}
 .item span{font:400 13px/1.3 var(--sans);color:var(--suave)}
 .item .st{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .low{display:none;background:var(--ambar);color:#000;font:600 12px/1.3 var(--sans);padding:4px 10px;border-radius:30px}
@@ -119,14 +122,14 @@ h1,h2,h3,h4{font-weight:700;letter-spacing:-.025em;line-height:1}
 .item.is-low{background:#fff6d6}
 .ticket{position:relative;border:0;border-left:1px solid var(--linea);border-radius:0;padding:4px 0 4px 16px;display:flex;flex-direction:column;min-height:270px}
 .lines{list-style:none;flex:1;display:grid;align-content:start}
-.lines li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid #f0f0f0;font:600 14px/1.35 var(--sans);letter-spacing:-.02em;animation:entra .25s ease-out}
+.lines li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid #f0f0f0;font:600 14px/1.35 var(--sans);letter-spacing:-.02em;font-variant-numeric:tabular-nums;animation:entra .25s ease-out}
 .lines li small{display:block;font:400 12px var(--sans);color:var(--suave)}
 .lines .vacio{display:block;color:var(--suave);font:400 14px/1.4 var(--sans);border:0;animation:none;padding:20px 2px}
 @keyframes entra{from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:none}}
 .tot{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#000;color:#fff;border-radius:12px;padding:12px 16px;margin-top:12px;font:500 14px var(--sans)}
-.tot b{font:700 28px/1 var(--sans);letter-spacing:-.05em;white-space:nowrap}
+.tot b{font:700 28px/1 var(--sans);letter-spacing:-.04em;white-space:nowrap;font-variant-numeric:tabular-nums}
 .cobrar{margin-top:12px;background:var(--acento);color:#fff;border:0;border-radius:30px;padding:12px;font:600 15px var(--sans);transition:background .2s,opacity .2s}
-.cobrar:hover:not(:disabled){background:#0a78e6}
+.cobrar:hover:not(:disabled){background:var(--acento-osc)}
 .cobrar:disabled{opacity:.35;cursor:not-allowed}
 .etiqueta{position:absolute;left:10px;right:10px;top:10px;z-index:2;background:#fff;border:2px solid #000;border-radius:12px;padding:8px 12px 8px;box-shadow:0 14px 30px rgba(0,0,0,.25);overflow:hidden}
 .etiqueta[hidden]{display:none}
@@ -135,9 +138,9 @@ h1,h2,h3,h4{font-weight:700;letter-spacing:-.025em;line-height:1}
 .etiqueta svg{display:block;width:100%;height:34px;margin-top:4px}
 .etiqueta i{position:absolute;top:0;bottom:0;width:3px;left:0;background:#ff2a4d;animation:barrido .9s ease-in-out forwards}
 @keyframes barrido{from{left:0}to{left:calc(100% - 3px)}}
-.status{min-height:2.7em;margin:12px 2px 0;font:400 13.5px/1.35 var(--sans);color:var(--suave)}
+.status{min-height:2.7em;margin:12px 2px 0;font:400 14px/1.4 var(--sans);color:var(--suave)}
 .status.ok{color:var(--verde);font-weight:600}
-.reset{background:none;border:0;color:var(--acento);font:600 13.5px var(--sans);padding:4px;margin:0 0 0 -2px;text-decoration:underline;text-underline-offset:3px}
+.reset{background:none;border:0;color:var(--acento);font:600 14px var(--sans);padding:12px 6px;margin:-4px 0 -8px -6px;text-decoration:underline;text-underline-offset:3px}
 
 /* pestañas (como "categorías") */
 .cats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
@@ -148,16 +151,16 @@ h1,h2,h3,h4{font-weight:700;letter-spacing:-.025em;line-height:1}
 .up[hidden]{display:none}
 .up.fade{animation:cambia .3s ease-out}
 @keyframes cambia{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.tr{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #f0f0f0;font:600 15px/1.3 var(--sans);letter-spacing:-.02em}
-.tr small{display:block;font:400 12.5px var(--sans);color:var(--suave);letter-spacing:0}
+.tr{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #f0f0f0;font:600 15px/1.3 var(--sans);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.tr small{display:block;font:400 13px var(--sans);color:var(--suave);letter-spacing:0}
 .tr.sel{background:#eef6ff;margin:0 -12px;padding:12px;border-radius:10px;border-bottom-color:transparent}
 .tr.warn{background:#fff6d6;margin:0 -12px;padding:12px;border-radius:10px;border-bottom-color:transparent}
 .tr.fin{border-bottom:0}
 .utot{display:flex;justify-content:space-between;align-items:center;background:#000;color:#fff;border-radius:14px;padding:12px 20px;margin-top:8px;font:500 14px var(--sans)}
-.utot b{font:700 34px/1 var(--sans);letter-spacing:-.05em}
+.utot b{font:700 34px/1 var(--sans);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
 .bad{display:inline-block;background:var(--ambar);font:600 12px/1.3 var(--sans);padding:4px 10px;border-radius:30px;margin-left:8px}
 .col3{display:grid;grid-template-columns:1.1fr 1.2fr 1fr 1fr;gap:8px;align-items:center}
-.cab{color:var(--suave);font:500 12.5px var(--sans);padding:12px 0 8px;border-bottom:1px solid var(--linea)}
+.cab{color:var(--suave);font:500 13px var(--sans);padding:12px 0 8px;border-bottom:1px solid var(--linea)}
 .r{text-align:right}
 
 /* ventana de navegador con turnos */
@@ -166,28 +169,27 @@ h1,h2,h3,h4{font-weight:700;letter-spacing:-.025em;line-height:1}
 .bbar b{width:11px;height:11px;border-radius:50%;background:#d6d6d6}
 .bbar span{margin:0 auto;min-width:0;max-width:100%;background:#fff;border-radius:8px;font:500 12px var(--sans);color:var(--suave);padding:4px clamp(12px,4vw,36px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .page{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px;padding:32px;align-items:center}
-.page .eyebrow{font:600 13px var(--sans);color:#2a54e8}
-.page h4{text-wrap:balance;font-size:clamp(26px,3.6vw,36px);margin-top:12px}
+.page h4{text-wrap:balance;font-size:clamp(26px,3.6vw,36px)}
 .page p{color:var(--suave);font-size:14.5px;line-height:1.45;margin-top:16px}
 .page ul{list-style:none;margin-top:16px;display:grid;gap:8px;font:500 14px var(--sans)}
 .page li{position:relative;padding-left:24px}
-.page li::before{content:"";position:absolute;left:0;top:.35em;width:12px;height:12px;border-radius:50%;background:var(--marca)}
+.page li::before{content:"";position:absolute;left:0;top:.35em;width:12px;height:12px;border-radius:50%;background:var(--acento)}
 .turno{background:var(--gris);border-radius:18px;padding:20px}
 .turno .win-h strong{font-size:22px}
 .dias,.horas{display:grid;gap:8px}
 .dias{grid-template-columns:repeat(5,1fr)}
 .horas{grid-template-columns:repeat(4,1fr)}
-.sl{background:#fff;border:1px solid #e3e3e3;border-radius:30px;padding:8px 0;font:600 13.5px var(--sans);text-align:center;transition:border-color .2s,background .2s,color .2s}
+.sl{background:#fff;border:1px solid var(--borde);border-radius:30px;padding:8px 0;font:600 13.5px var(--sans);text-align:center;transition:border-color .2s,background .2s,color .2s}
 .sl:hover:not(:disabled){border-color:#000}
 .sl[aria-pressed="true"]{background:#000;border-color:#000;color:#fff}
 .sl:disabled{color:#767676;background:#f0f0f0;border-color:transparent;cursor:not-allowed}
 .sl.oc{text-decoration:line-through}
-.eti{font:600 12.5px var(--sans);color:var(--suave);margin:16px 0 8px}
+.eti{font:600 13px var(--sans);color:var(--suave);margin:16px 0 8px}
 .sede{background:#fff;border:1px solid #e3e3e3;border-radius:14px;padding:12px 16px;font:600 14px var(--sans)}
 .pedir{display:block;width:100%;margin-top:16px;background:#000;color:#fff;border:0;border-radius:30px;padding:12px;font:600 15px var(--sans);transition:background .2s,opacity .2s}
 .pedir:hover:not(:disabled){background:#1f1f1f}
 .pedir:disabled{opacity:.3;cursor:not-allowed}
-.resumen{margin-top:12px;min-height:2.6em;font:400 13px/1.35 var(--sans);color:var(--suave)}
+.resumen{margin-top:12px;min-height:2.6em;font:400 14px/1.4 var(--sans);color:var(--suave)}
 .resumen.ok{color:var(--verde);font-weight:600}
 
 /* para quién (tarjetas) */
@@ -215,12 +217,12 @@ h1,h2,h3,h4{font-weight:700;letter-spacing:-.025em;line-height:1}
 .card{position:relative;width:min(400px,100%);margin:48px auto 0;background:var(--gris);border-radius:40px;padding:64px 28px 28px;box-shadow:0 18px 40px rgba(0,0,0,.2)}
 .card .tabn{position:absolute;top:0;left:50%;transform:translateX(-50%);border-radius:0 0 18px 18px;padding:12px 20px;display:flex;align-items:center;gap:12px;color:#fff;font:600 14px/1 var(--sans);letter-spacing:-.02em;white-space:nowrap}
 .seg{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#fff;border-radius:30px;padding:4px}
-.seg button{border:0;background:transparent;border-radius:26px;padding:12px 2px;font:600 12.5px/1 var(--sans);letter-spacing:-.01em;color:rgba(0,0,0,.55);transition:background .2s,color .2s}
+.seg button{border:0;background:transparent;border-radius:26px;padding:12px 2px;font:600 13px/1 var(--sans);letter-spacing:-.01em;color:rgba(0,0,0,.62);transition:background .2s,color .2s}
 .seg button[aria-pressed="true"]{background:#000;color:#fff}
 .big{display:flex;align-items:baseline;gap:4px 12px;flex-wrap:wrap;margin:28px 4px 12px}
 .big .it:empty{display:none}
 .que{margin:0 4px 20px;font:400 14px/1.4 var(--sans);letter-spacing:-.01em;color:var(--suave)}
-.big b{font:700 clamp(44px,12vw,62px)/1 var(--sans);letter-spacing:-.05em}
+.big b{font:700 clamp(44px,12vw,62px)/1 var(--sans);letter-spacing:-.04em}
 .big .it{font-size:26px;color:rgba(0,0,0,.6);letter-spacing:-.02em}
 .pasos{border-top:1px solid #dcdcdc;padding:16px 4px 0}
 .pasos h3{font:600 14px/1.3 var(--sans);letter-spacing:-.01em}
@@ -236,8 +238,7 @@ h1,h2,h3,h4{font-weight:700;letter-spacing:-.025em;line-height:1}
 
 /* quién soy (tarjeta de dos columnas) */
 .quien{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:32px;align-items:center;padding:0;margin:0 auto;max-width:var(--w)}
-.quien .tag{display:flex;align-items:center;gap:12px;font:600 15px var(--sans);letter-spacing:-.02em}
-.quien h2{font-size:clamp(34px,5.4vw,50px);margin-top:20px}
+.quien h2{font-size:clamp(34px,5.4vw,50px)}
 .quien p{color:var(--suave);font-size:17px;line-height:1.45;letter-spacing:-.01em;margin-top:16px;max-width:46ch}
 .quien .acc{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .quien .acc .btn{margin-top:0}
@@ -250,14 +251,14 @@ h1,h2,h3,h4{font-weight:700;letter-spacing:-.025em;line-height:1}
 .tec{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
 .tec span{background:#fff;border-radius:30px;padding:8px 12px;font:500 13px/1 var(--sans);letter-spacing:-.01em}
 .card3 .enlaces{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px}
-.card3 .enlaces a{font:600 14.5px/1 var(--sans);color:#000;text-underline-offset:4px}
+.card3 .enlaces a{display:inline-block;padding:6px 0;font:600 15px/1 var(--sans);color:#000;text-underline-offset:4px}
 .como{list-style:none;margin-top:24px;display:grid;gap:12px;max-width:46ch}
 .como li{font:400 15px/1.4 var(--sans);letter-spacing:-.01em;color:var(--suave)}
 .como li b{color:#000;font-weight:600}
 .quien .media{margin:0;min-height:380px;padding:32px 16px 40px;border-radius:24px}
 .tarjeta{width:min(320px,100%);background:#fff;border-radius:20px;padding:24px;box-shadow:0 16px 36px rgba(0,0,0,.2);transform:rotate(-2.5deg)}
 .tarjeta .mark{width:44px;height:44px;border-radius:12px;font-size:26px}
-.tarjeta b{display:block;margin-top:20px;font:700 24px/1 var(--sans);letter-spacing:-.05em}
+.tarjeta b{display:block;margin-top:20px;font:700 24px/1 var(--sans);letter-spacing:-.04em}
 .tarjeta .rol{display:block;margin-top:8px;font:400 13.5px/1.4 var(--sans);color:var(--suave)}
 .tarjeta hr{border:0;border-top:1px solid var(--linea);margin:20px 0 16px}
 .tarjeta em{display:block;font:500 13px/1.7 var(--sans);font-style:normal}
@@ -276,7 +277,7 @@ details p{padding:0 4px 24px;color:var(--suave);font-size:16px;line-height:1.5;l
 .form{max-width:560px;margin:36px auto 0;background:var(--gris);border-radius:30px;padding:32px}
 .f{margin-bottom:16px}
 .f label{display:block;font:600 13px var(--sans);margin-bottom:8px;letter-spacing:-.01em}
-.f input,.f select,.f textarea{width:100%;background:#fff;border:1px solid #e6e6e6;border-radius:14px;padding:12px 16px;font:400 16px var(--sans);color:#000}
+.f input,.f select,.f textarea{width:100%;background:#fff;border:1px solid var(--borde);border-radius:14px;padding:12px 16px;font:400 16px var(--sans);color:#000;caret-color:var(--acento)}
 .f textarea{min-height:110px;resize:vertical}
 .f input:focus,.f select:focus,.f textarea:focus{outline:2px solid var(--acento);outline-offset:1px;border-color:transparent}
 .form .btn{width:100%}
@@ -290,18 +291,19 @@ details p{padding:0 4px 24px;color:var(--suave);font-size:16px;line-height:1.5;l
 footer{position:relative;background:#000;color:#fff;padding:88px 20px 0;overflow:hidden}
 footer::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(1120px,calc(100% - 40px));height:28px;background:#fff;border-radius:0 0 28px 28px}
 footer .c{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,.7fr) minmax(0,.8fr);gap:40px;padding-top:20px}
-footer h5{font:500 14px var(--sans);color:rgba(255,255,255,.5);margin-bottom:20px}
-footer .col a,footer .col span{display:block;color:#fff;text-decoration:none;font:500 14px/1 var(--sans);margin-bottom:16px;letter-spacing:-.01em}
+footer .col h2{font:500 14px/1.2 var(--sans);letter-spacing:0;color:rgba(255,255,255,.62);margin-bottom:14px}
+footer .col a,footer .col span{display:block;color:#fff;text-decoration:none;font:500 14px/1 var(--sans);padding:6px 0;margin-bottom:4px;letter-spacing:-.01em}
 footer .col a:hover{text-decoration:underline;text-underline-offset:3px}
-footer .lema{font-size:clamp(30px,4.4vw,38px);margin-top:28px;line-height:1}
+footer .lema{font-size:clamp(30px,4.4vw,38px);font-weight:700;letter-spacing:-.025em;margin-top:28px;line-height:1}
 footer .lema span{display:block}
 footer .izq p{color:rgba(255,255,255,.6);font-size:14px;line-height:1.5;max-width:44ch;margin-top:16px}
 footer .izq .btn{margin-top:24px;padding:12px 20px;font-size:14px;border-radius:12px}
-footer .copy{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:28px}
-.gigante{display:block;text-align:center;white-space:nowrap;color:#111;font:700 clamp(70px,18.4vw,290px)/.8 var(--sans);letter-spacing:-.06em;margin:40px 0 0;transform:translateY(.16em);user-select:none}
+footer .copy{font-size:13px;color:rgba(255,255,255,.62);margin-top:28px}
+.gigante{display:block;text-align:center;white-space:nowrap;color:#111;font:700 clamp(66px,17.6vw,280px)/.8 var(--sans);letter-spacing:-.04em;margin:40px 0 0;transform:translateY(.16em);user-select:none}
 
 /* botón flotante */
-.wa{position:fixed;right:20px;bottom:20px;z-index:40;width:54px;height:54px;border-radius:50%;background:#000;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .2s}
+.wa{position:fixed;right:20px;bottom:20px;z-index:40;width:54px;height:54px;border-radius:50%;background:#000;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .2s,opacity .2s,visibility .2s}
+.wa.fuera{opacity:0;visibility:hidden;transform:scale(.85)}
 .wa:hover{transform:scale(1.06)}
 .wa svg{width:26px;height:26px}
 
@@ -340,8 +342,8 @@ footer .copy{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:28px}
 .hero-txt{grid-column:1;padding-top:clamp(28px,3.4vw,44px);max-width:560px}
 .hero .sub{font-size:clamp(17px,1.9vw,20px);line-height:1.45;letter-spacing:-.01em;opacity:.92;max-width:44ch}
 .acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-.btn.vidrio{background:rgba(255,255,255,.14);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.34)}
-.btn.vidrio:hover{background:rgba(255,255,255,.24)}
+.btn.vidrio{background:rgba(27,16,112,.34);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7)}
+.btn.vidrio:hover{background:rgba(27,16,112,.5)}
 .notas{list-style:none;display:flex;flex-wrap:wrap;row-gap:8px;margin-top:32px;font:500 14px/1.35 var(--sans);letter-spacing:-.01em}
 .notas li+li::before{content:"";display:inline-block;width:1px;height:12px;background:rgba(255,255,255,.45);margin:0 12px;vertical-align:-1px}
 
@@ -356,7 +358,7 @@ footer .copy{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:28px}
 .tk table{width:100%;border-collapse:collapse;margin-top:4px}
 .tk td{padding:8px 0;vertical-align:top}
 .tk td:last-child{text-align:right;white-space:nowrap;font-weight:600;padding-left:12px}
-.tk td small{display:block;margin-top:2px;font:400 12px/1.2 var(--sans);color:var(--suave)}
+.tk td small{display:block;margin-top:2px;font:400 12px/1.35 var(--sans);color:var(--suave)}
 .tk-t td{border-top:3px solid #000;padding-top:12px;font:800 30px/1 "Barlow Condensed",sans-serif;letter-spacing:0}
 .tk-t td:first-child{font-size:22px}
 .tk-pago{margin-top:12px;font-size:12.5px;color:var(--suave)}
@@ -439,7 +441,7 @@ p,li{text-wrap:pretty}
 .card3 .enlaces a{transition:color .2s}
 .card3 .enlaces a:hover{color:var(--acento)}
 .f input,.f select,.f textarea{transition:border-color .2s}
-.f input:hover,.f select:hover,.f textarea:hover{border-color:#cfcfcf}
+.f input:hover,.f select:hover,.f textarea:hover{border-color:#555}
 .f input:disabled,.f select:disabled,.f textarea:disabled{background:var(--gris);color:rgba(0,0,0,.4);cursor:not-allowed}
 .wa:active{transform:scale(.96)}
 </style>
@@ -617,7 +619,7 @@ p,li{text-wrap:pretty}
               <div class="tr"><span>Crédito</span><span>$6.000,00</span></div>
               <div class="tr"><span>Transferencia</span><span>$26.350,00</span></div>
               <div class="tr"><span>Cuenta corriente</span><span>$16.000,00</span></div>
-              <div class="tr" style="color:#5a2fe0;font-weight:700;font-size:20px"><span>Total</span><span>$134.550,00</span></div>
+              <div class="tr" style="color:var(--acento-osc);font-weight:700;font-size:20px"><span>Total</span><span>$134.550,00</span></div>
               <div class="tr fin" style="color:var(--verde);font-weight:700"><span>Ganancia bruta</span><span>$37.650,00</span></div>
             </div>
           </div>
@@ -633,10 +635,9 @@ p,li{text-wrap:pretty}
             <div class="bbar"><b></b><b></b><b></b><span>consultorio-de-ejemplo.com.ar</span></div>
             <div class="page">
               <div>
-                <p class="eyebrow">Consultorio de ejemplo</p>
                 <h4>Pedí tu turno desde el celular</h4>
                 <p>Elegí el lugar, el día y el horario que mejor te quede. El consultorio recibe tu solicitud y te la confirma.</p>
-                <ul><li>Turnos desde el celular</li><li>Solicitud para confirmar</li><li>Pensada primero para el celular</li></ul>
+                <ul><li>Lugar, día y horario en pocos toques</li><li>Los horarios ocupados aparecen tachados</li><li>El consultorio confirma cada solicitud</li></ul>
               </div>
               <div class="turno" id="turno">
                 <div class="win-h"><strong>Elegí tu turno</strong><span class="chip">Ejemplo</span></div>
@@ -666,28 +667,28 @@ p,li{text-wrap:pretty}
     </div>
     <div class="cambios">
       <article class="cambio rv">
-        <span class="rub"><i class="c1"><svg><use href="#i-caja"/></svg></i>Caja y stock</span>
+        <span class="rub"><i class="c1"><svg aria-hidden="true"><use href="#i-caja"/></svg></i>Caja y stock</span>
         <dl>
           <dt class="it">Antes</dt><dd>Las ventas anotadas en un cuaderno y el stock contado a ojo.</dd>
           <dt class="it ya">Ahora</dt><dd class="ya">Cada venta descuenta del stock, avisa cuando algo se termina y el cierre del día sale solo.</dd>
         </dl>
       </article>
       <article class="cambio rv" style="--d:.08s">
-        <span class="rub"><i class="c3"><svg><use href="#i-fiado"/></svg></i>Fiado</span>
+        <span class="rub"><i class="c3"><svg aria-hidden="true"><use href="#i-fiado"/></svg></i>Fiado</span>
         <dl>
           <dt class="it">Antes</dt><dd>Las deudas de los clientes en una libreta que se llena, se mancha o se pierde.</dd>
           <dt class="it ya">Ahora</dt><dd class="ya">Cada cliente con su cuenta corriente: lo que compró, lo que pagó y lo que debe.</dd>
         </dl>
       </article>
       <article class="cambio rv">
-        <span class="rub"><i class="c5"><svg><use href="#i-turnos"/></svg></i>Turnos</span>
+        <span class="rub"><i class="c5"><svg aria-hidden="true"><use href="#i-turnos"/></svg></i>Turnos</span>
         <dl>
           <dt class="it">Antes</dt><dd>Turnos pedidos por mensaje a cualquier hora, y a veces dos para el mismo horario.</dd>
           <dt class="it ya">Ahora</dt><dd class="ya">Una web donde el cliente elige un horario libre y vos ves la agenda del día.</dd>
         </dl>
       </article>
       <article class="cambio rv" style="--d:.08s">
-        <span class="rub"><i class="c2"><svg><use href="#i-web"/></svg></i>Página web</span>
+        <span class="rub"><i class="c2"><svg aria-hidden="true"><use href="#i-web"/></svg></i>Página web</span>
         <dl>
           <dt class="it">Antes</dt><dd>Clientes que no te encuentran, o que te preguntan lo mismo una y otra vez.</dd>
           <dt class="it ya">Ahora</dt><dd class="ya">Una página con lo que hacés, dónde estás y un botón que abre tu WhatsApp con el mensaje armado.</dd>
@@ -736,7 +737,7 @@ p,li{text-wrap:pretty}
         <div class="barra"><i></i><i></i><i></i></div>
         <div class="etqs"><span>Charla</span><span>Propuesta</span><span>Entrega y soporte</span></div>
       </div>
-      <ul class="ck" id="ck" aria-live="polite"></ul>
+      <ul class="ck" id="ck"></ul>
       <a class="btn" id="planBtn" href="https://wa.me/5493764151908"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.4 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2zm5.6 14c-.2.7-1.3 1.3-1.8 1.3-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.6.8 2 .8 2.1.1.1.1.3 0 .4-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.8 1.2 2.1 1.3.3.1.4.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.3.1 1.6.8 1.9.9.3.2.5.2.6.3.1.1.1.7-.1 1.4z"/></svg>Pedir presupuesto</a>
     </div>
   </div>
@@ -746,7 +747,6 @@ p,li{text-wrap:pretty}
 <section class="sec" id="quien">
   <div class="quien rv">
     <div>
-      <p class="tag" style="margin:0;color:#000;max-width:none"><span class="mark" aria-hidden="true">HD</span>Hiro Digital</p>
       <h2>Te atiende quien lo arma.</h2>
       <p>Soy Ángel Riquelme, técnico en informática y estudiante de Ingeniería en Informática en la Universidad Gastón Dachary, en Posadas. Antes de escribir una línea quiero entender cómo trabaja tu negocio.</p>
       <p>Armo sistemas y webs a medida y también hago soporte técnico: si algo se traba después de la entrega, sabés a quién escribirle.</p>
@@ -849,18 +849,18 @@ p,li{text-wrap:pretty}
 <footer>
   <div class="c">
     <div class="izq">
-      <a class="logo" href="#inicio"><span class="mark">HD</span>Hiro Digital <span style="color:rgba(255,255,255,.5);font-weight:500">Webs y sistemas</span></a>
-      <h2 class="lema"><span>Sistemas y webs</span><span class="it">a tu medida.</span></h2>
-      <p>Ordenamos lo que hoy llevás en un cuaderno o en Excel, o armamos la web para que tus clientes te encuentren y te consulten.</p>
+      <a class="logo" href="#inicio"><span class="mark">HD</span>Hiro Digital <span style="color:rgba(255,255,255,.62);font-weight:500">Webs y sistemas</span></a>
+      <p class="lema"><span>Sistemas y webs</span><span class="it">a tu medida.</span></p>
+      <p>Webs con precio fijo y sistemas de caja, stock, fiado y turnos para negocios de Posadas y Misiones.</p>
       <a class="btn blanco" href="https://wa.me/5493764151908" data-msg="Hola, quiero pedir un presupuesto sin cargo.">Pedir presupuesto</a>
       <p class="copy">© 2026 Hiro Digital. Las pantallas de esta página muestran datos de ejemplo.<br>Hecho en Posadas por Ángel Riquelme.</p>
     </div>
     <div class="col">
-      <h5>Menú</h5>
+      <h2>Menú</h2>
       <a href="#inicio">Inicio</a><a href="#que-hacemos">Qué armamos</a><a href="#trabajos">Trabajos</a><a href="#precios">Precios</a><a href="#preguntas">Preguntas</a>
     </div>
     <div class="col">
-      <h5>Contacto</h5>
+      <h2>Contacto</h2>
       <a href="https://wa.me/5493764151908" data-msg="Hola, quiero hacer una consulta.">WhatsApp</a><a href="mailto:angelriquelme573@gmail.com">Mail</a><span>Posadas, Misiones</span><a href="https://w1sar.github.io/" target="_blank" rel="noopener">Portafolio</a><a href="https://github.com/W1sar" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
@@ -912,6 +912,16 @@ p,li{text-wrap:pretty}
   });
   nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') cerrar(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrar(); });
+
+  // el botón flotante se esconde en el formulario y el pie, que ya tienen su propio contacto
+  var waBtn = document.querySelector('.wa'), tapan = new Set();
+  if ('IntersectionObserver' in window) {
+    var ioWa = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) tapan.add(e.target); else tapan.delete(e.target); });
+      waBtn.classList.toggle('fuera', tapan.size > 0);
+    });
+    [$('contacto'), document.querySelector('footer')].forEach(function (n) { ioWa.observe(n); });
+  }
 
   var money = function (n) { return '$' + n.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
 
