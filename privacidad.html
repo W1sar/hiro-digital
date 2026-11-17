@@ -25,16 +25,24 @@ a{color:var(--acento);text-underline-offset:3px}
 .top a{color:#000;text-decoration:none;font-weight:700;letter-spacing:-.03em;font-size:18px}
 .top span{color:var(--suave);font-size:14px}
 main{max-width:720px;margin:0 auto;padding:56px 20px 80px}
-h1{font-size:clamp(40px,7vw,60px);font-weight:700;letter-spacing:-.05em;line-height:1;margin-bottom:18px}
+h1{font-size:clamp(40px,7vw,60px);font-weight:700;letter-spacing:-.05em;line-height:1;margin-bottom:20px}
 h1 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.02em}
 .fecha{color:var(--suave);font-size:15px;margin-bottom:36px}
 h2{font-size:24px;font-weight:700;letter-spacing:-.03em;line-height:1.15;margin:44px 0 12px;padding-top:24px;border-top:1px solid var(--linea)}
 p,li{color:#111}
 p+p{margin-top:12px}
-ul{margin:10px 0 0 22px}
-li+li{margin-top:6px}
-.nota{background:#f6f3ff;border-radius:16px;padding:18px 20px;margin-top:16px}
+ul{margin:12px 0 0 24px}
+li+li{margin-top:8px}
+.nota{background:#f6f3ff;border-radius:16px;padding:20px 20px;margin-top:16px}
 footer{max-width:720px;margin:0 auto;padding:0 20px 48px;color:var(--suave);font-size:14px}
+
+/* pulido: balanceo de títulos y párrafos sin viudas */
+h1,h2,h3{text-wrap:balance}
+p,li{text-wrap:pretty}
+/* pulido: estados interactivos */
+a{transition:color .2s}
+a:hover{color:#000}
+.top a:hover{color:var(--acento)}
 </style>
 </head>
 <body>
